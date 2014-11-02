@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 02-nov-2014 20:36:46 by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="Datos.Punto" table="Punto" schema="dbo" catalog="SDAgro">
+        <id name="idPunto" type="int">
+            <column name="idPunto" />
+            <generator class="assigned" />
+        </id>
+        <property name="id" type="int">
+            <column name="id" not-null="true" />
+        </property>
+        <property name="latitud" type="string">
+            <column name="latitud" not-null="true" />
+        </property>
+        <property name="longitud" type="string">
+            <column name="longitud" not-null="true" />
+        </property>
+        <property name="fechaCreacion" type="string">
+            <column name="fecha_creacion" not-null="true" />
+        </property>
+        <set name="detallePuntos" table="DetallePunto" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idPunto" not-null="true" />
+            </key>
+            <one-to-many class="Datos.DetallePunto" />
+        </set>
+    </class>
+</hibernate-mapping>

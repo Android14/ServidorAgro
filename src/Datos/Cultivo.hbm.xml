@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 02-nov-2014 20:36:46 by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="Datos.Cultivo" table="Cultivo" schema="dbo" catalog="SDAgro">
+        <id name="idCultivo" type="int">
+            <column name="idCultivo" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="propiedad" class="Datos.Propiedad" fetch="select">
+            <column name="idPropiedad" not-null="true" />
+        </many-to-one>
+        <many-to-one name="area" class="Datos.Area" fetch="select">
+            <column name="idArea" not-null="true" />
+        </many-to-one>
+        <property name="id" type="int">
+            <column name="id" not-null="true" />
+        </property>
+        <property name="nombre" type="string">
+            <column name="nombre" not-null="true" />
+        </property>
+        <property name="distEntrePlantas" type="string">
+            <column name="dist_entre_plantas" not-null="true" />
+        </property>
+        <property name="distEntreSurcos" type="string">
+            <column name="dist_entre_surcos" not-null="true" />
+        </property>
+        <property name="superficieTotal" type="string">
+            <column name="superficie_total" not-null="true" />
+        </property>
+        <property name="cantidadSemillas" type="string">
+            <column name="cantidad_semillas" not-null="true" />
+        </property>
+        <property name="kilogramosSemillas" type="string">
+            <column name="kilogramos_semillas" not-null="true" />
+        </property>
+        <property name="produccionEsperada" type="string">
+            <column name="produccion_esperada" not-null="true" />
+        </property>
+        <property name="cerrado" type="int">
+            <column name="cerrado" not-null="true" />
+        </property>
+        <property name="fechaCreacion" type="string">
+            <column name="fecha_creacion" not-null="true" />
+        </property>
+        <property name="fechaActualizacion" type="string">
+            <column name="fecha_actualizacion" not-null="true" />
+        </property>
+        <property name="fechaCierre" type="string">
+            <column name="fecha_cierre" />
+        </property>
+        <property name="tiempoTranscurrido" type="string">
+            <column name="tiempo_transcurrido" />
+        </property>
+        <property name="produccionReal" type="string">
+            <column name="produccion_real" />
+        </property>
+        <property name="observaciones" type="string">
+            <column name="observaciones" />
+        </property>
+        <property name="idPropiedad" type="int">
+            <column name="id_propiedad" not-null="true" />
+        </property>
+        <property name="idArea" type="int">
+            <column name="id_area" not-null="true" />
+        </property>
+        <property name="idTipocultivo" type="int">
+            <column name="id_tipocultivo" not-null="true" />
+        </property>
+        <property name="idTipocultivo_1" type="int">
+            <column name="idTipocultivo" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 02-nov-2014 20:36:46 by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="Datos.Proveedor" table="Proveedor" schema="dbo" catalog="SDAgro">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <property name="nombreCompleto" type="string">
+            <column name="nombre_completo" not-null="true" />
+        </property>
+        <property name="direccion" type="string">
+            <column name="direccion" not-null="true" />
+        </property>
+        <property name="telefono" type="string">
+            <column name="telefono" not-null="true" />
+        </property>
+        <property name="otro" type="string">
+            <column name="otro" not-null="true" />
+        </property>
+        <property name="fechaCreacion" type="string">
+            <column name="fecha_creacion" not-null="true" />
+        </property>
+        <property name="fechaActualizacion" type="string">
+            <column name="fecha_actualizacion" not-null="true" />
+        </property>
+        <set name="productos" table="Producto" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_proveedor" not-null="true" />
+            </key>
+            <one-to-many class="Datos.Producto" />
+        </set>
+    </class>
+</hibernate-mapping>

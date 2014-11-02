@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 02-nov-2014 20:36:46 by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="Datos.Area" table="Area" schema="dbo" catalog="SDAgro">
+        <id name="idArea" type="int">
+            <column name="idArea" />
+            <generator class="assigned" />
+        </id>
+        <property name="id" type="int">
+            <column name="id" not-null="true" />
+        </property>
+        <property name="nombre" type="string">
+            <column name="nombre" not-null="true" />
+        </property>
+        <property name="superficie" type="string">
+            <column name="superficie" not-null="true" />
+        </property>
+        <property name="fechaCreacion" type="string">
+            <column name="fecha_creacion" not-null="true" />
+        </property>
+        <property name="fechaActualizacion" type="string">
+            <column name="fecha_actualizacion" not-null="true" />
+        </property>
+        <property name="abierto" type="int">
+            <column name="abierto" not-null="true" />
+        </property>
+        <property name="activo" type="int">
+            <column name="activo" not-null="true" />
+        </property>
+        <property name="cultivo" type="string">
+            <column name="cultivo" />
+        </property>
+        <set name="detallePuntos" table="DetallePunto" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idArea" not-null="true" />
+            </key>
+            <one-to-many class="Datos.DetallePunto" />
+        </set>
+        <set name="trabajos" table="Trabajo" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idArea" not-null="true" />
+            </key>
+            <one-to-many class="Datos.Trabajo" />
+        </set>
+        <set name="actividads" table="Actividad" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idArea" not-null="true" />
+            </key>
+            <one-to-many class="Datos.Actividad" />
+        </set>
+        <set name="aplicacions" table="Aplicacion" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idArea" not-null="true" />
+            </key>
+            <one-to-many class="Datos.Aplicacion" />
+        </set>
+        <set name="cultivos" table="Cultivo" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idArea" not-null="true" />
+            </key>
+            <one-to-many class="Datos.Cultivo" />
+        </set>
+        <set name="propiedads" table="Propiedad" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idArea" not-null="true" />
+            </key>
+            <one-to-many class="Datos.Propiedad" />
+        </set>
+    </class>
+</hibernate-mapping>

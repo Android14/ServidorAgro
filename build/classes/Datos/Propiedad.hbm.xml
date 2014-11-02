@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 02-nov-2014 20:36:46 by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="Datos.Propiedad" table="Propiedad" schema="dbo" catalog="SDAgro">
+        <id name="idPropiedad" type="int">
+            <column name="idPropiedad" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="propietario" class="Datos.Propietario" fetch="select">
+            <column name="correo_propietario" not-null="true" />
+        </many-to-one>
+        <many-to-one name="area" class="Datos.Area" fetch="select">
+            <column name="idArea" not-null="true" />
+        </many-to-one>
+        <property name="id" type="int">
+            <column name="id" not-null="true" />
+        </property>
+        <property name="nombrePropiedad" type="string">
+            <column name="nombre_propiedad" not-null="true" />
+        </property>
+        <property name="descripcion" type="string">
+            <column name="descripcion" not-null="true" />
+        </property>
+        <property name="idArea" type="int">
+            <column name="id_area" not-null="true" />
+        </property>
+        <property name="fechaCreacion" type="string">
+            <column name="fecha_creacion" not-null="true" />
+        </property>
+        <property name="fechaActualizacion" type="string">
+            <column name="fecha_actualizacion" not-null="true" />
+        </property>
+        <set name="cultivos" table="Cultivo" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idPropiedad" not-null="true" />
+            </key>
+            <one-to-many class="Datos.Cultivo" />
+        </set>
+    </class>
+</hibernate-mapping>

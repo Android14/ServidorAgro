@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 02-nov-2014 20:36:46 by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="Datos.Actividad" table="Actividad" schema="dbo" catalog="SDAgro">
+        <id name="idActividad" type="int">
+            <column name="idActividad" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="area" class="Datos.Area" fetch="select">
+            <column name="idArea" not-null="true" />
+        </many-to-one>
+        <property name="id" type="int">
+            <column name="id" not-null="true" />
+        </property>
+        <property name="descripcion" type="string">
+            <column name="descripcion" not-null="true" />
+        </property>
+        <property name="cantidadPersonas" type="int">
+            <column name="cantidad_personas" not-null="true" />
+        </property>
+        <property name="costoPersonas" type="string">
+            <column name="costo_personas" not-null="true" />
+        </property>
+        <property name="nombreProducto" type="string">
+            <column name="nombre_producto" not-null="true" />
+        </property>
+        <property name="costoProducto" type="string">
+            <column name="costo_producto" not-null="true" />
+        </property>
+        <property name="costoTotal" type="string">
+            <column name="costo_total" not-null="true" />
+        </property>
+        <property name="idArea" type="int">
+            <column name="id_area" not-null="true" />
+        </property>
+        <property name="fechaCreacion" type="string">
+            <column name="fecha_creacion" not-null="true" />
+        </property>
+        <property name="fechaActualizacion" type="string">
+            <column name="fecha_actualizacion" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 02-nov-2014 20:36:46 by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="Datos.Plaga" table="Plaga" schema="dbo" catalog="SDAgro">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <property name="nombre" type="string">
+            <column name="nombre" not-null="true" />
+        </property>
+        <property name="detallePlaga" type="string">
+            <column name="detalle_plaga" not-null="true" />
+        </property>
+        <property name="imagen" type="string">
+            <column name="imagen" not-null="true" />
+        </property>
+        <property name="fechaCreacion" type="string">
+            <column name="fecha_creacion" not-null="true" />
+        </property>
+        <property name="fechaActualizacion" type="string">
+            <column name="fecha_actualizacion" not-null="true" />
+        </property>
+        <set name="afectas" table="Afecta" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_plaga" not-null="true" />
+            </key>
+            <one-to-many class="Datos.Afecta" />
+        </set>
+        <set name="tratas" table="Trata" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_plaga" not-null="true" />
+            </key>
+            <one-to-many class="Datos.Trata" />
+        </set>
+    </class>
+</hibernate-mapping>

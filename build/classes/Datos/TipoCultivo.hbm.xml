@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 02-nov-2014 20:36:46 by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="Datos.TipoCultivo" table="TipoCultivo" schema="dbo" catalog="SDAgro">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <property name="nombreComun" type="string">
+            <column name="nombre_comun" not-null="true" />
+        </property>
+        <property name="nombreCientifico" type="string">
+            <column name="nombre_cientifico" not-null="true" />
+        </property>
+        <property name="familia" type="string">
+            <column name="familia" not-null="true" />
+        </property>
+        <property name="genero" type="string">
+            <column name="genero" not-null="true" />
+        </property>
+        <property name="distEntrePlantas" type="string">
+            <column name="dist_entre_plantas" not-null="true" />
+        </property>
+        <property name="distEntreSurcos" type="string">
+            <column name="dist_entre_surcos" not-null="true" />
+        </property>
+        <property name="imagen" type="string">
+            <column name="imagen" not-null="true" />
+        </property>
+        <property name="fechaCreacion" type="string">
+            <column name="fecha_creacion" not-null="true" />
+        </property>
+        <property name="fechaActualizacion" type="string">
+            <column name="fecha_actualizacion" not-null="true" />
+        </property>
+        <set name="afectas" table="Afecta" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_tipocultivo" not-null="true" />
+            </key>
+            <one-to-many class="Datos.Afecta" />
+        </set>
+    </class>
+</hibernate-mapping>

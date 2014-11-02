@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 02-nov-2014 20:36:46 by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="Datos.Afecta" table="Afecta" schema="dbo" catalog="SDAgro">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="plaga" class="Datos.Plaga" fetch="select">
+            <column name="id_plaga" not-null="true" />
+        </many-to-one>
+        <many-to-one name="tipoCultivo" class="Datos.TipoCultivo" fetch="select">
+            <column name="id_tipocultivo" not-null="true" />
+        </many-to-one>
+        <property name="peligrosidad" type="int">
+            <column name="peligrosidad" not-null="true" />
+        </property>
+        <property name="fechaCreacion" type="string">
+            <column name="fecha_creacion" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
