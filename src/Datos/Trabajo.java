@@ -1,5 +1,5 @@
 package Datos;
-// Generated 02-nov-2014 20:36:45 by Hibernate Tools 3.6.0
+// Generated 02-nov-2014 22:45:18 by Hibernate Tools 3.6.0
 
 
 import java.io.Serializable;

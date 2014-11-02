@@ -102,11 +102,11 @@ public class conexion implements Serializable {
 //            l.setNomLab("fernandito");
 //            l.setEstado((byte)1);
             Plaga l = new Plaga();
-            l.setNombre("Chulumino");
-            l.setDetallePlaga("Mata Personas");
-            l.setImagen("mndsvndnfvd");
+            l.setNombre("Lombris");
+            l.setDetallePlaga("Mata perros");
+            l.setImagen("bkjdasfkjb");
             l.setFechaCreacion("10/10/2014");
-            l.setFechaActualizacion("15/10/2014");
+            l.setFechaActualizacion("19/10/2014");
             conexion c = new conexion();
             //conexion c = new conexion(HibernateUtil.getSessionFactory().openSession());
             c.Insertar(l);

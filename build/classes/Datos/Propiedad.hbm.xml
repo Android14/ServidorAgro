@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 02-nov-2014 20:36:46 by Hibernate Tools 3.6.0 -->
+<!-- Generated 02-nov-2014 22:45:19 by Hibernate Tools 3.6.0 -->
 <hibernate-mapping>
     <class name="Datos.Propiedad" table="Propiedad" schema="dbo" catalog="SDAgro">
         <id name="idPropiedad" type="int">
             <column name="idPropiedad" />
-            <generator class="assigned" />
+            <generator class="native" />
         </id>
         <many-to-one name="propietario" class="Datos.Propietario" fetch="select">
             <column name="correo_propietario" not-null="true" />
