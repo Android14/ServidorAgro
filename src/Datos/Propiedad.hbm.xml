@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 02-nov-2014 22:45:19 by Hibernate Tools 3.6.0 -->
+<!-- Generated 11-nov-2014 19:09:07 by Hibernate Tools 3.6.0 -->
 <hibernate-mapping>
     <class name="Datos.Propiedad" table="Propiedad" schema="dbo" catalog="SDAgro">
         <id name="idPropiedad" type="int">
@@ -9,7 +9,7 @@
             <generator class="native" />
         </id>
         <many-to-one name="propietario" class="Datos.Propietario" fetch="select">
-            <column name="correo_propietario" not-null="true" />
+            <column name="nombre_usuario" not-null="true" />
         </many-to-one>
         <many-to-one name="area" class="Datos.Area" fetch="select">
             <column name="idArea" not-null="true" />

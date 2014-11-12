@@ -1,5 +1,5 @@
 package Datos;
-// Generated 02-nov-2014 22:45:18 by Hibernate Tools 3.6.0
+// Generated 11-nov-2014 19:09:06 by Hibernate Tools 3.6.0
 
 
 import java.io.Serializable;
@@ -12,9 +12,9 @@ import java.util.Set;
 public class Propietario  implements java.io.Serializable {
 
 
+     private Serializable nombreUsuario;
      private Serializable correo;
      private Serializable nombreCompleto;
-     private Serializable nombreUsuario;
      private Serializable contrasena;
      private Serializable fechaCreacion;
      private Serializable fechaActualizacion;
@@ -24,24 +24,31 @@ public class Propietario  implements java.io.Serializable {
     }
 
 	
-    public Propietario(Serializable correo, Serializable nombreCompleto, Serializable nombreUsuario, Serializable contrasena, Serializable fechaCreacion, Serializable fechaActualizacion) {
+    public Propietario(Serializable nombreUsuario, Serializable correo, Serializable nombreCompleto, Serializable contrasena, Serializable fechaCreacion, Serializable fechaActualizacion) {
+        this.nombreUsuario = nombreUsuario;
         this.correo = correo;
         this.nombreCompleto = nombreCompleto;
-        this.nombreUsuario = nombreUsuario;
         this.contrasena = contrasena;
         this.fechaCreacion = fechaCreacion;
         this.fechaActualizacion = fechaActualizacion;
     }
-    public Propietario(Serializable correo, Serializable nombreCompleto, Serializable nombreUsuario, Serializable contrasena, Serializable fechaCreacion, Serializable fechaActualizacion, Set propiedads) {
+    public Propietario(Serializable nombreUsuario, Serializable correo, Serializable nombreCompleto, Serializable contrasena, Serializable fechaCreacion, Serializable fechaActualizacion, Set propiedads) {
+       this.nombreUsuario = nombreUsuario;
        this.correo = correo;
        this.nombreCompleto = nombreCompleto;
-       this.nombreUsuario = nombreUsuario;
        this.contrasena = contrasena;
        this.fechaCreacion = fechaCreacion;
        this.fechaActualizacion = fechaActualizacion;
        this.propiedads = propiedads;
     }
    
+    public Serializable getNombreUsuario() {
+        return this.nombreUsuario;
+    }
+    
+    public void setNombreUsuario(Serializable nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
+    }
     public Serializable getCorreo() {
         return this.correo;
     }
@@ -55,13 +62,6 @@ public class Propietario  implements java.io.Serializable {
     
     public void setNombreCompleto(Serializable nombreCompleto) {
         this.nombreCompleto = nombreCompleto;
-    }
-    public Serializable getNombreUsuario() {
-        return this.nombreUsuario;
-    }
-    
-    public void setNombreUsuario(Serializable nombreUsuario) {
-        this.nombreUsuario = nombreUsuario;
     }
     public Serializable getContrasena() {
         return this.contrasena;

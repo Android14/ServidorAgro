@@ -3,19 +3,19 @@
 <hibernate-reverse-engineering>
   <schema-selection match-catalog="SDAgro" match-schema="dbo"/>
   <table-filter match-name="Area"/>
-  <table-filter match-name="Trata"/>
-  <table-filter match-name="Punto"/>
-  <table-filter match-name="Actividad"/>
-  <table-filter match-name="Propiedad"/>
-  <table-filter match-name="sysdiagrams"/>
-  <table-filter match-name="TipoCultivo"/>
-  <table-filter match-name="Trabajo"/>
-  <table-filter match-name="Proveedor"/>
-  <table-filter match-name="Producto"/>
-  <table-filter match-name="Afecta"/>
-  <table-filter match-name="Plaga"/>
   <table-filter match-name="Cultivo"/>
+  <table-filter match-name="Afecta"/>
+  <table-filter match-name="Proveedor"/>
   <table-filter match-name="Propietario"/>
+  <table-filter match-name="Propiedad"/>
   <table-filter match-name="Aplicacion"/>
+  <table-filter match-name="Actividad"/>
   <table-filter match-name="DetallePunto"/>
+  <table-filter match-name="Punto"/>
+  <table-filter match-name="sysdiagrams"/>
+  <table-filter match-name="Plaga"/>
+  <table-filter match-name="Trata"/>
+  <table-filter match-name="Trabajo"/>
+  <table-filter match-name="Producto"/>
+  <table-filter match-name="TipoCultivo"/>
 </hibernate-reverse-engineering>

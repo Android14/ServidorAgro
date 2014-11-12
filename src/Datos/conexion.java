@@ -102,8 +102,8 @@ public class conexion implements Serializable {
 //            l.setNomLab("fernandito");
 //            l.setEstado((byte)1);
             Plaga l = new Plaga();
-            l.setNombre("Lombris");
-            l.setDetallePlaga("Mata perros");
+            l.setNombre("Campeones");
+            l.setDetallePlaga("Mata choclo");
             l.setImagen("bkjdasfkjb");
             l.setFechaCreacion("10/10/2014");
             l.setFechaActualizacion("19/10/2014");

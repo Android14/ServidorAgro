@@ -8,6 +8,11 @@ package servidoragro;
 import Controladores.*;
 import Datos.Plaga;
 import Datos.Punto;
+import Formularios.ServidorSocket;
+import Util.ListaEscuchadoresBD;
+import Util.ListaEscuchadoresMsjBD;
+
+
 /**
  *
  * @author GABRIEL
@@ -28,7 +33,14 @@ public class ServidorAgro {
 //            l.setFechaActualizacion("19/10/2014");
 //            //conexion c = new conexion(HibernateUtil.getSessionFactory().openSession());
 //            c.InsertarPlaga(l);
-        CtrPunto c=new CtrPunto();
+        
+        ServidorSocket ss=new ServidorSocket();
+        ControladorBD cbd=new ControladorBD();
+        ListaEscuchadoresBD.addReceiveListener(cbd);
+        ss.show();
+
+        /*CtrPunto c=new CtrPunto();
+        
           Punto l = new Punto();
             l.setId(2);
             l.setLatitud("-64.64386832");
@@ -36,7 +48,7 @@ public class ServidorAgro {
             l.setFechaCreacion("10/10/2014");
            
             //conexion c = new conexion(HibernateUtil.getSessionFactory().openSession());
-            c.InsertarPunto(l);
+            c.InsertarPunto(l);*/
     }
     
 }

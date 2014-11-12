@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 02-nov-2014 22:45:19 by Hibernate Tools 3.6.0 -->
+<!-- Generated 11-nov-2014 19:09:07 by Hibernate Tools 3.6.0 -->
 <hibernate-mapping>
     <class name="Datos.Propietario" table="Propietario" schema="dbo" catalog="SDAgro">
-        <id name="correo" type="serializable">
-            <column name="correo" />
+        <id name="nombreUsuario" type="serializable">
+            <column name="nombre_usuario" />
             <generator class="assigned" />
         </id>
+        <property name="correo" type="string">
+            <column name="correo" not-null="true" />
+        </property>
         <property name="nombreCompleto" type="string">
             <column name="nombre_completo" not-null="true" />
-        </property>
-        <property name="nombreUsuario" type="string">
-            <column name="nombre_usuario" not-null="true" />
         </property>
         <property name="contrasena" type="string">
             <column name="contrasena" not-null="true" />
@@ -25,7 +25,7 @@
         </property>
         <set name="propiedads" table="Propiedad" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="correo_propietario" not-null="true" />
+                <column name="nombre_usuario" not-null="true" />
             </key>
             <one-to-many class="Datos.Propiedad" />
         </set>
